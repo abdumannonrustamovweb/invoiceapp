@@ -16,18 +16,18 @@ function MyCard({
     <Card
       onClick={() => navigate(`${id}`)}
       className={
-        "border-2 border-transparent transition-colors hover:border-amber-300 max-w-[730px] w-full mx-auto rounded"
+        "border-2 border-transparent rounded-2xl min-w-[712px] w-full mx-auto transition-all transform hover:border-blue-300 hover:-translate-y-[2px] active:border-blue-400 active:shadow-md mb-3 active:-translate-y-[4px]"
       }
     >
       <CardHeader>
         <div className="flex items-center justify-between gap-4 flex-wrap">
-          <div className="cards mr-auto">
+          <div className="cards mr-auto ">
             <CardTitle>#{postCode}</CardTitle>
-            <CardDescription>{createdAt}</CardDescription>
-            <span>{clientName}</span>
+            <CardDescription className="ml-5">{createdAt}</CardDescription>
+            <span className="text-[15px] text-gray-500">{clientName}</span>
           </div>
           <div className="cards">
-            <span>£{total}</span>
+            <span className="font-black">£{total}</span>
             <StatustBadge status={status} />
           </div>
           <ArrowRight className="text-[#7C5DFA] cordArrow" />

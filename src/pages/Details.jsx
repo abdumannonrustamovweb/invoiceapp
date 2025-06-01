@@ -176,11 +176,11 @@ function Details() {
         <CardContent className="p-[40px] ">
           <div className="flex items-center-center justify-between mb-[21px]">
             <div>
-              <h2>
-                <span className="text-[#888EB0]">#</span>
+              <h2 className="text-2xl font-black">
+                <span className="text-[#888EB0] font-black">#</span>
                 {invoice.clientAddress?.postCode}
               </h2>
-              <h2 className="mt-[8px]">{invoice.items?.[0].name}</h2>
+              <h2 className="mt-[8px] ">{invoice.items?.[0].name}</h2>
             </div>
             <div>
               <h3>{invoice.senderAddress?.street}</h3>
@@ -197,7 +197,7 @@ function Details() {
                     <h3 className="mb-[12px] text=[#DFE3FA] text-[12px] font-normal">
                       Invoice Date
                     </h3>
-                    <h2 className="text-[15px] font-bold">
+                    <h2 className="text-[18px] font-bold">
                       {invoice?.createdAt}
                     </h2>
                   </div>
@@ -205,7 +205,7 @@ function Details() {
                     <h3 className="mb-[12px] text=[#DFE3FA] text-[12px] font-normal">
                       Payment Due
                     </h3>
-                    <h2 className="text-[15px] font-bold">
+                    <h2 className="text-[22px] font-bold">
                       {invoice?.paymentDue}
                     </h2>
                   </div>
@@ -213,7 +213,7 @@ function Details() {
               </div>
               <div>
                 <h3 className="mb-[12px] text-[12px] font-normal">Bill To</h3>
-                <h2 className="text-[15px] font-bold mb-[8px]">
+                <h2 className="text-[18px] font-bold mb-[8px]">
                   {invoice?.clientName}
                 </h2>
                 <h3 className="mb-[12px] text=[#DFE3FA] text-[12px] font-normal">
@@ -231,10 +231,10 @@ function Details() {
               <h3 className="mb-[12px] text=[#DFE3FA] text-[12px] font-normal">
                 Sent to
               </h3>
-              <h2>{invoice?.clientEmail}</h2>
+              <h2 className="font-black text-[18px]">{invoice?.clientEmail}</h2>
             </div>
           </div>
-          <Card>
+          <Card className="bg-blue-50">
             <CardContent>
               <div className="p-[10px]">
                 {invoice.items?.map((item) => (
@@ -243,25 +243,25 @@ function Details() {
                     className="flex items-center justify-between mt-[12px] details__items"
                   >
                     <div>
-                      <span>
-                        Name
-                      </span>
+                      <span>Name</span>
                       <h3 className="text-[11px] font-bold">{item.name}</h3>
                     </div>
                     <div className="flex gap-[100px]">
                       <div>
-                      <span>QTy.</span>
-                      <h3 className="text-[11px] font-bold">{item.quantity}</h3>
+                        <span>QTy.</span>
+                        <h3 className="text-[11px] font-bold">
+                          {item.quantity}
+                        </h3>
                       </div>
                       <div>
                         <span>Price</span>
-                      <h3 className="text-[11px] font-bold">£{item.price}</h3>
+                        <h3 className="text-[11px] font-bold">£{item.price}</h3>
                       </div>
                       <div>
                         <span>Total</span>
-                      <h3 className="text-[11px] font-bold">
-                        £{item.quantity * item.price}
-                      </h3>
+                        <h3 className="text-[11px] font-bold">
+                          £{item.quantity * item.price}
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -269,9 +269,9 @@ function Details() {
               </div>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="bg-[#373B53] text-white">
             <CardContent
-              className={"flex items-center justify-between !rounded-s-none"}
+              className={"flex  items-center justify-between !rounded-s-none"}
             >
               <h3 className="text-[12px] font-normal">Amount Due</h3>
               <h2>£{reducer}</h2>

@@ -57,11 +57,11 @@ export default function ItemList({ info, onItemsChange }) {
           },
         ]);
       } else {
-        toast.info("Ismni kiritish zarur!");
+        toast.info("Ismni kiritish shart");
       }
     } else if (type === "delete") {
       if (localItems.length === 1) {
-        toast.info("Kamida 1 ta element qolishi zarur!");
+        toast.info("Kamida 1 ta element qolishing");
       } else {
         setLocalItems((prev) => prev.filter((el) => el.id !== id));
       }

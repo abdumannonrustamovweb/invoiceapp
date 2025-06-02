@@ -9,13 +9,20 @@ function Sidebar() {
 
   return (
     <>
-      <div className="bg-[#373B53] flex md:flex-col justify-between items-center w-[72px] md:w-[80px] h-[72px] md:h-screen z-50">
-        {/* Icon */}
-        <div className="p-2 bg-[#7C5DFA] w-full flex justify-center items-center h-full md:h-[80px] rounded-r-2xl">
-          <img src="./image/Icon.svg" alt="icon" className="w-55 h-55" />
+      <div
+        className="bg-[#373B53] flex items-center justify-between
+        w-full h-[72px] z-50
+        md:flex-col md:justify-between md:w-[80px] md:h-screen"
+      >
+        <div
+          className="p-2 bg-[#7C5DFA] flex justify-center items-center 
+          h-full w-[72px] md:w-full md:h-[80px] 
+          rounded-r-2xl md:rounded-r-none md:rounded-b-2xl"
+        >
+          <img src="./image/Icon.svg" alt="icon" className="w-15 h-15" />
         </div>
 
-        <div className="flex md:flex-col items-center gap-4 md:gap-6 px-2 md:w-full">
+        <div className="flex gap-4 items-center px-2 md:flex-col md:gap-6 md:w-full">
           <ThemesDrop />
           <hr className="w-full bg-[#494E6E] border-0 h-[1px] hidden md:block" />
           <img
@@ -31,7 +38,7 @@ function Sidebar() {
       <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
         <SheetContent
           side="left"
-          className="ml-[72px] md:min-w-[calc(100%-72px)] lg:min-w-[calc(100%-80px)] modalCss"
+          className="ml-0 md:ml-[80px] w-full md:min-w-[calc(55%-80px)] modalCss"
         >
           <Form setSheetOpen={setSheetOpen} info={editedData} />
         </SheetContent>
